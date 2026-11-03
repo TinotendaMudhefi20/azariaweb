@@ -1,0 +1,22 @@
+AZARIAH CHRISTIAN COLLEGE - IMAGE GUIDE
+
+All website photographs are supplied as high-quality WebP copies.
+The uploaded originals have not been altered.
+
+Folders:
+- logo/       Official school crest used in the navigation bar.
+- students/   Student portraits and uniform photographs.
+- academics/  Science practical lessons and classroom learning.
+- activities/ Outdoor challenges, team building and sports.
+- campus/     School grounds and campus life.
+- events/     School gatherings and admissions activities.
+- gallery/    Additional group photographs.
+
+To replace a photo:
+1. Put the new optimised photo in the relevant folder.
+2. Open the HTML page and search for the image filename.
+3. Change only the filename/path and the alt description.
+4. Keep the folder structure unchanged.
+
+The image files are not cropped or resized. WebP encoding is high quality;
+the uploaded originals remain separate and unchanged.

@@ -1,0 +1,1170 @@
+/* =========================================================
+   AZARIAH CHRISTIAN COLLEGE WEBSITE STYLESHEET
+   Main colours, layout, components and responsive rules
+   Edit the variables in :root to update the site palette.
+   ========================================================= */
+
+:root {
+    --red:#c81035;
+    --blue:#294ed0;
+    --navy:#203c91;
+    --ink:#20283a;
+    --muted:#697386;
+    --pale:#f3f5fb
+}
+
+* {
+    box-sizing:border-box
+}
+
+html {
+    scroll-behavior:smooth;
+    scroll-padding-top:90px
+}
+
+body {
+    font-family:Roboto,Arial,sans-serif;
+    color:var(--ink);
+    font-size:15px;
+    line-height:1.8;
+    overflow-x:hidden
+}
+
+.container {
+    width:min(100% - 32px,1140px)
+}
+
+.topbar {
+    background:var(--navy);
+    color:#fff;
+    font-size:11px;
+    padding:6px 0
+}
+
+.topbar .container {
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    flex-wrap:wrap
+}
+
+.main-nav {
+    box-shadow:0 3px 20px #17234a0d;
+    padding:12px 0
+}
+
+.brand-mark {
+    width:42px;
+    height:42px;
+    border:2px solid var(--red);
+    color:var(--red);
+    display:grid;
+    place-items:center;
+    font:700 26px Lora
+}
+
+.brand-name {
+    font:700 16px Lora;
+    letter-spacing:1px;
+    color:var(--navy);
+    line-height:1.2
+}
+
+.brand-name small {
+    display:block;
+    font:700 9px Roboto;
+    letter-spacing:2px;
+    margin-top:4px
+}
+
+.nav-link {
+    font-size:13px;
+    font-weight:500;
+    padding:10px 10px!important;
+    color:#303a50!important
+}
+
+.nav-link:hover,.nav-link.active {
+    color:var(--red)!important
+}
+
+.btn {
+    border-radius:2px;
+    font-size:13px;
+    font-weight:700;
+    padding:12px 21px
+}
+
+.btn-red {
+    background:var(--red);
+    color:white;
+    border:1px solid var(--red)
+}
+
+.btn-red:hover {
+    background:#a50d2b;
+    color:#fff
+}
+
+.hero {
+    min-height:650px;
+    min-height:clamp(570px,78vh,820px);
+    display:flex;
+    align-items:center;
+    position:relative;
+    color:#fff;
+    background:linear-gradient(90deg,#101c3ded,#15254a9c 65%,#1a2a4b50)
+}
+
+.hero-copy {
+    max-width:760px;
+    padding:75px 0
+}
+
+.eyebrow {
+    font-size:11px;
+    letter-spacing:2.5px;
+    font-weight:700;
+    color:var(--red);
+    margin-bottom:15px
+}
+
+.eyebrow.light {
+    color:#d5ddff
+}
+
+.hero h1,.page-hero h1 {
+    font:600 clamp(42px,6vw,76px)/1.12 Lora;
+    letter-spacing:-2px;
+    margin:0 0 22px
+}
+
+.hero h1 em,.page-hero h1 em {
+    color:#e7a5b2;
+    font-weight:400
+}
+
+.hero p,.page-hero p {
+    font-size:17px;
+    color:#e3e7f1;
+    max-width:620px;
+    margin-bottom:28px
+}
+
+.hero-note {
+    font-size:10px;
+    letter-spacing:3px;
+    margin-top:55px;
+    color:#d9deeb
+}
+
+.hero-count {
+    position:absolute;
+    right:5%;
+    bottom:35px;
+    color:#fff;
+    font-size:11px
+}
+
+.hero-count span {
+    display:inline-block;
+    width:65px;
+    height:1px;
+    background:#ffffff88;
+    vertical-align:middle;
+    margin:0 10px
+}
+
+.section-pad {
+    padding:clamp(65px,8vw,105px) 0
+}
+
+.section-pad h2 {
+    font:600 clamp(32px,4.2vw,49px)/1.2 Lora;
+    letter-spacing:-1.2px;
+    margin-bottom:20px
+}
+
+.section-pad h2 em {
+    color:var(--red);
+    font-weight:400
+}
+
+.lead-copy {
+    font-size:17px;
+    color:#4d5870
+}
+
+.image-placeholder {
+    background:linear-gradient(135deg,#e1e7f2,#aebbd5);
+    display:grid;
+    place-items:center;
+    text-align:center;
+    color:#5e6e8b;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1px;
+    min-height:300px;
+    padding:20px
+}
+
+.image-placeholder small {
+    display:block;
+    font-weight:400;
+    letter-spacing:0
+}
+
+.campus {
+    min-height:410px
+}
+
+.activity {
+    min-height:390px
+}
+
+.stats {
+    background:var(--navy);
+    color:#fff;
+    padding:32px 0
+}
+
+.stats b {
+    display:block;
+    font:700 21px Lora
+}
+
+.stats span {
+    font-size:11px;
+    color:#d6def7
+}
+
+.pale {
+    background:var(--pale)
+}
+
+.section-title {
+    max-width:760px;
+    margin:0 auto
+}
+
+.section-title p {
+    color:var(--muted)
+}
+
+.feature {
+    background:#fff;
+    padding:30px;
+    height:100%;
+    border-bottom:3px solid transparent;
+    transition:.3s
+}
+
+.feature:hover {
+    transform:translateY(-6px);
+    border-color:var(--red);
+    box-shadow:0 15px 35px #1b2a4a12
+}
+
+.feature>span {
+    width:46px;
+    height:46px;
+    background:#fcebf0;
+    color:var(--red);
+    display:grid;
+    place-items:center;
+    font-size:22px;
+    margin-bottom:20px
+}
+
+.feature h3,.programme h3 {
+    font:600 20px Lora
+}
+
+.feature p,.programme p {
+    font-size:14px;
+    color:var(--muted);
+    margin:10px 0 0
+}
+
+.text-link {
+    color:var(--red);
+    text-decoration:none;
+    font-weight:700;
+    font-size:13px
+}
+
+.gallery-tile {
+    min-height:230px
+}
+
+.cta-panel {
+    background:var(--navy);
+    padding:clamp(28px,5vw,55px);
+    color:#fff
+}
+
+.cta-panel h2 {
+    color:#fff
+}
+
+.cta-panel p {
+    color:#e0e6f7
+}
+
+.contact b {
+    font:600 16px Lora;
+    color:var(--navy)
+}
+
+.contact p {
+    font-size:13px;
+    color:var(--muted)
+}
+
+.page-hero {
+    background:linear-gradient(90deg,#101c3ded,#203c91b8);
+    padding:clamp(85px,12vw,145px) 0;
+    color:#fff
+}
+
+.page-hero h1 {
+    font-size:clamp(40px,5.5vw,66px)
+}
+
+.programme {
+    display:flex;
+    gap:22px;
+    padding:30px;
+    border:1px solid #e5e9f1;
+    height:100%;
+    background:#fff
+}
+
+.number {
+    font:600 29px Lora;
+    color:var(--red)
+}
+
+.admission-note {
+    background:#f3f5fb;
+    border-left:4px solid var(--red);
+    padding:30px
+}
+
+.admission-note h3,.steps h3 {
+    font:600 23px Lora;
+    margin-bottom:20px
+}
+
+.admission-note p {
+    margin-bottom:9px
+}
+
+.requirement {
+    display:flex;
+    align-items:center;
+    gap:20px;
+    background:#fff;
+    padding:22px;
+    height:100%;
+    box-shadow:0 6px 25px #1b2a4a08
+}
+
+.requirement b {
+    font:600 25px Lora;
+    color:var(--red)
+}
+
+.steps {
+    background:#fff;
+    padding:30px
+}
+
+.steps li {
+    padding:7px 0;
+    color:#586277
+}
+
+.gallery-grid {
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    grid-auto-rows:210px;
+    gap:15px
+}
+
+.gallery-item {
+    background:linear-gradient(135deg,#dfe5f2,#aebbd5);
+    display:grid;
+    place-items:center;
+    text-align:center;
+    color:#63728d;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1px;
+    padding:15px;
+    transition:.3s
+}
+
+.gallery-item:hover {
+    transform:scale(1.02)
+}
+
+.gallery-item.g1 {
+    grid-column:span 2;
+    grid-row:span 2
+}
+
+footer {
+    background:#17234b;
+    color:#fff;
+    padding:60px 0 20px
+}
+
+footer .footer-brand {
+    color:#fff;
+    margin-bottom:15px
+}
+
+footer p,footer span,footer a {
+    font-size:12px;
+    color:#c4cce0
+}
+
+footer b {
+    display:block;
+    font:600 15px Lora;
+    margin-bottom:15px
+}
+
+footer a,footer span {
+    display:block;
+    text-decoration:none;
+    margin:8px 0
+}
+
+footer a:hover {
+    color:#fff
+}
+
+.copyright {
+    border-top:1px solid #ffffff20;
+    margin-top:38px;
+    padding-top:16px;
+    font-size:11px;
+    color:#aeb8d2
+}
+
+.back-top {
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    background:var(--red);
+    color:white;
+    width:42px;
+    height:42px;
+    display:grid;
+    place-items:center;
+    text-decoration:none;
+    opacity:0;
+    pointer-events:none;
+    z-index:20;
+    transition:.3s
+}
+
+.back-top.show {
+    opacity:1;
+    pointer-events:auto
+}
+
+.reveal {
+    opacity:0;
+    transform:translateY(22px);
+    transition:.7s ease
+}
+
+.reveal.visible {
+    opacity:1;
+    transform:none
+}
+
+@media(min-width:1400px) {
+    .container {
+        max-width:1200px
+    }
+    .hero-copy {
+        max-width:800px
+    }
+}
+
+@media(max-width:991.98px) {
+    .navbar-collapse {
+        padding:15px 0
+    }
+    .navbar-nav .nav-link {
+        padding:9px 0!important
+    }
+    .main-nav .btn {
+        display:inline-block
+    }
+    .hero {
+        min-height:610px
+    }
+    .gallery-grid {
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        grid-auto-rows:190px
+    }
+}
+
+@media(max-width:575.98px) {
+    body {
+        font-size:14px
+    }
+    .container {
+        width:min(100% - 28px,100%)
+    }
+    .topbar {
+        font-size:10px
+    }
+    .topbar .container {
+        justify-content:center;
+        text-align:center
+    }
+    .brand-mark {
+        width:36px;
+        height:36px;
+        font-size:22px
+    }
+    .brand-name {
+        font-size:13px
+    }
+    .brand-name small {
+        font-size:8px
+    }
+    .hero {
+        min-height:620px;
+        background-position:58% center
+    }
+    .hero-copy {
+        padding:65px 0
+    }
+    .hero h1 {
+        font-size:clamp(39px,11vw,54px);
+        letter-spacing:-1.3px
+    }
+    .hero p,.page-hero p {
+        font-size:15px
+    }
+    .hero-note {
+        font-size:9px;
+        letter-spacing:1.8px;
+        margin-top:40px
+    }
+    .hero-count {
+        bottom:18px
+    }
+    .section-pad {
+        padding:65px 0
+    }
+    .campus {
+        min-height:300px
+    }
+    .activity {
+        min-height:280px
+    }
+    .image-placeholder {
+        min-height:240px
+    }
+    .stats {
+        padding:25px 0
+    }
+    .stats b {
+        font-size:17px
+    }
+    .stats span {
+        font-size:10px
+    }
+    .feature {
+        padding:24px
+    }
+    .page-hero {
+        padding:80px 0
+    }
+    .page-hero h1 {
+        font-size:43px
+    }
+    .programme {
+        padding:22px;
+        gap:15px
+    }
+    .gallery-grid {
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        grid-auto-rows:145px;
+        gap:9px
+    }
+    .gallery-item.g1 {
+        grid-column:span 2;
+        grid-row:span 1
+    }
+    .requirement {
+        padding:17px
+    }
+    .steps {
+        padding:22px
+    }
+    .cta-panel {
+        padding:30px 23px
+    }
+    .cta-panel h2 {
+        font-size:34px
+    }
+    footer {
+        padding-top:45px
+    }
+}
+
+/* Refined visual direction inspired by the supplied education-site reference */
+:root {
+    --red:#c81035;
+    --blue:#294ed0;
+    --navy:#17234b;
+    --ink:#20232d;
+    --muted:#707784;
+    --pale:#f7f8fb
+}
+
+body {
+    font-family:Roboto,Arial,sans-serif
+}
+
+h1,h2,h3,.brand-name {
+    font-family:"Lora",Georgia,serif
+}
+
+.section-intro {
+    font-size:17px;
+    color:var(--muted);
+    max-width:700px
+}
+
+.offer-section {
+    background:#fff
+}
+
+.offer-photo {
+    min-height:620px
+}
+
+.offer-item {
+    display:flex;
+    gap:17px;
+    align-items:flex-start
+}
+
+.offer-icon {
+    flex:0 0 58px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:var(--red);
+    color:#fff;
+    display:grid;
+    place-items:center;
+    font-size:24px
+}
+
+.offer-item h3 {
+    font:500 19px Roboto,Arial,sans-serif;
+    margin:2px 0 7px
+}
+
+.offer-item p {
+    font-size:14px;
+    color:var(--muted);
+    margin:0
+}
+
+.campus-feature {
+    padding:85px 0;
+    background:linear-gradient(100deg,#17234beF,#17234bdc),url('../images/campus/students-on-campus-grounds.webp') center/cover;
+    color:#fff
+}
+
+.campus-feature h2 {
+    font:600 clamp(32px,4vw,48px)/1.2 Lora;
+    margin:0 0 20px
+}
+
+.campus-feature h2 em {
+    color:#f0a8b8;
+    font-weight:400
+}
+
+.campus-feature p {
+    color:#e0e5f2;
+    font-size:16px
+}
+
+.video-placeholder {
+    min-height:390px;
+    position:relative;
+    border-radius:10px;
+    overflow:hidden;
+    background:linear-gradient(135deg,#65779b,#293c6c)
+}
+
+.play-button {
+    position:absolute;
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#fff;
+    color:var(--red);
+    display:grid;
+    place-items:center;
+    font-size:23px;
+    box-shadow:0 8px 30px #0003
+}
+
+.events-section {
+    background:#fff
+}
+
+.event-card {
+    height:100%;
+    background:#fff;
+    box-shadow:0 8px 35px #17234b12;
+    transition:.3s
+}
+
+.event-card:hover {
+    transform:translateY(-7px);
+    box-shadow:0 15px 35px #17234b20
+}
+
+.event-image {
+    min-height:230px
+}
+
+.event-content {
+    padding:24px
+}
+
+.event-tag {
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:1.8px;
+    color:var(--red)
+}
+
+.event-content h3 {
+    font:600 21px Lora;
+    margin:10px 0
+}
+
+.event-content p {
+    color:var(--muted);
+    font-size:14px
+}
+
+.event-content a {
+    font-size:13px;
+    font-weight:700;
+    color:var(--red);
+    text-decoration:none
+}
+
+.enquiry-band {
+    padding:85px 0;
+    background:linear-gradient(105deg,#17234bf0,#294ed0d9),url('../images/events/school-gathering-wide.webp') center/cover;
+    color:#fff
+}
+
+.enquiry-band h2 {
+    font:600 clamp(32px,4vw,48px)/1.2 Lora;
+    margin-bottom:18px
+}
+
+.enquiry-band h2 em {
+    color:#f0a8b8;
+    font-weight:400
+}
+
+.enquiry-band p {
+    color:#e3e8f5
+}
+
+.enquiry-note {
+    font-size:12px;
+    opacity:.8
+}
+
+.enquiry-form {
+    padding:30px;
+    background:#ffffff12;
+    border:1px solid #ffffff38;
+    backdrop-filter:blur(6px)
+}
+
+.enquiry-form label {
+    display:block;
+    font-size:12px;
+    margin:0 0 7px;
+    color:#fff
+}
+
+.enquiry-form input,.enquiry-form select,.enquiry-form textarea {
+    width:100%;
+    background:transparent;
+    border:0;
+    border-bottom:1px solid #ffffff75;
+    padding:10px 2px;
+    color:#fff;
+    outline:none;
+    border-radius:0
+}
+
+.enquiry-form input::placeholder,.enquiry-form textarea::placeholder {
+    color:#e3e8f5
+}
+
+.enquiry-form select option {
+    color:#20232d
+}
+
+.enquiry-form button {
+    margin-top:8px
+}
+
+.site-footer {
+    background:#17191f;
+    color:#fff;
+    padding:75px 0 20px
+}
+
+.site-footer h3 {
+    font:600 19px Roboto,Arial,sans-serif;
+    margin:0 0 13px
+}
+
+.footer-rule {
+    display:block;
+    width:48px;
+    height:2px;
+    background:var(--red);
+    margin-bottom:28px
+}
+
+.footer-contact p {
+    display:flex;
+    gap:15px;
+    color:#fff;
+    font-size:14px;
+    margin-bottom:18px
+}
+
+.footer-contact p>span {
+    color:#c4c8d2
+}
+
+.footer-feature {
+    margin-bottom:20px
+}
+
+.footer-feature b {
+    font-size:14px
+}
+
+.footer-feature p,.footer-muted {
+    font-size:13px;
+    color:#aeb4c1;
+    margin:5px 0
+}
+
+.footer-feature a {
+    color:#fff;
+    font-size:12px;
+    text-decoration:none
+}
+
+.footer-links {
+    list-style:none;
+    padding:0;
+    margin:0
+}
+
+.footer-links li {
+    margin:0 0 12px
+}
+
+.footer-links a {
+    color:#c4c8d2;
+    text-decoration:none;
+    font-size:14px
+}
+
+.footer-links a:hover,.footer-feature a:hover {
+    color:#fff
+}
+
+.social-links {
+    display:flex;
+    gap:12px;
+    margin:22px 0
+}
+
+.social-links a {
+    width:43px;
+    height:43px;
+    border-radius:50%;
+    background:#292c34;
+    color:#fff;
+    display:grid;
+    place-items:center;
+    text-decoration:none;
+    font-weight:700
+}
+
+.social-links a:hover {
+    background:var(--red)
+}
+
+.footer-apply {
+    display:inline-block;
+    margin-top:8px;
+    padding:10px 18px;
+    background:var(--red);
+    color:#fff;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:700
+}
+
+.copyright {
+    border-top:1px solid #ffffff20;
+    margin-top:48px;
+    padding-top:18px;
+    text-align:center;
+    font-size:11px;
+    color:#aeb4c1
+}
+
+@media(max-width:991.98px) {
+    .offer-photo {
+        min-height:420px
+    }
+    .campus-feature {
+        padding:65px 0
+    }
+    .enquiry-band {
+        padding:65px 0
+    }
+}
+
+@media(max-width:575.98px) {
+    .offer-photo {
+        min-height:290px
+    }
+    .offer-icon {
+        flex-basis:48px;
+        width:48px;
+        height:48px
+    }
+    .offer-item h3 {
+        font-size:17px
+    }
+    .video-placeholder {
+        min-height:250px
+    }
+    .event-image {
+        min-height:180px
+    }
+    .enquiry-form {
+        padding:20px
+    }
+    .site-footer {
+        padding:55px 0 18px
+    }
+    .footer-rule {
+        margin-bottom:18px
+    }
+}
+
+
+/* =========================================================
+   SCHOOL PHOTOGRAPHS
+   Images are stored in assets/images by subject.
+   Replace the filename in the HTML when changing a photo.
+   ========================================================= */
+
+.brand-logo {
+    display: block;
+    width: 48px;
+    height: 52px;
+    object-fit: contain;
+    flex: 0 0 auto;
+}
+
+.section-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.campus-photo {
+    min-height: 300px;
+    max-height: 460px;
+}
+
+.activity-photo {
+    min-height: 300px;
+    max-height: 460px;
+}
+
+.gallery-tile {
+    height: 230px;
+}
+
+.offer-photo {
+    min-height: 300px;
+    max-height: 480px;
+}
+
+.event-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    background: #eef1f7;
+    min-height: 230px;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 230px;
+    object-fit: cover;
+    transition: transform .45s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.04);
+}
+
+.gallery-item figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 14px 16px;
+    background: #fff;
+}
+
+.gallery-item figcaption strong {
+    color: var(--navy);
+    font-family: Lora, Georgia, serif;
+    font-size: 16px;
+}
+
+.gallery-item figcaption span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+@media (max-width: 575.98px) {
+    .brand-logo {
+        width: 40px;
+        height: 44px;
+    }
+
+    .gallery-tile {
+        height: 180px;
+    }
+}
+
+
+/* Page-specific hero photography */
+.hero-home {
+    background-image:
+        linear-gradient(90deg, rgba(8, 17, 48, .84), rgba(8, 17, 48, .38) 62%, rgba(8, 17, 48, .16)),
+        url('../images/hero/homepage-students-corridor.webp') !important;
+    background-position: center 38%;
+}
+.page-hero-about {
+    background-image:
+        linear-gradient(90deg, rgba(8, 17, 48, .82), rgba(8, 17, 48, .38)),
+        url('../images/campus/students-on-campus-grounds.webp') !important;
+    background-position: center 48%;
+}
+.page-hero-academics {
+    background-image:
+        linear-gradient(90deg, rgba(8, 17, 48, .84), rgba(8, 17, 48, .38)),
+        url('../images/academics/science-practical-lab-1.webp') !important;
+    background-position: center 45%;
+}
+.page-hero-admissions {
+    background-image:
+        linear-gradient(90deg, rgba(8, 17, 48, .84), rgba(8, 17, 48, .38)),
+        url('../images/students/students-group-uniforms.webp') !important;
+    background-position: center 42%;
+}
+.page-hero-gallery {
+    background-image:
+        linear-gradient(90deg, rgba(8, 17, 48, .84), rgba(8, 17, 48, .38)),
+        url('../images/events/students-at-school-event.webp') !important;
+    background-position: center 42%;
+}
+
+
+/* Ensure hero photography fills the full banner area without blank gaps */
+.hero, .page-hero {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #101c3d;
+}
+.hero-home {
+    background-position: center 42%;
+    min-height: 620px;
+}
+@media (max-width: 767px) {
+    .hero-home { min-height: 560px; }
+}
+
+
+/* Sports and enrichment curriculum */
+.sports-curriculum { background: #f7f8fb; }
+.sports-list { margin-top: 1.5rem; }
+.sport-item { min-height: 82px; display:flex; align-items:center; gap:14px; padding:18px 20px; height:100%; background:#fff; border:1px solid rgba(13,30,70,.09); border-radius:10px; color:#14234b; font-family:Roboto,sans-serif; font-weight:600; box-shadow:0 5px 20px rgba(15,30,60,.035); }
+.sport-item:first-letter { color:#b51f35; }
+.sport-plus { display:inline-flex; width:27px; height:27px; align-items:center; justify-content:center; border-radius:50%; background:#b51f35; color:white; font-size:20px; }
+@media(max-width:575px){.sport-item{min-height:68px;padding:14px;font-size:.95rem;gap:9px}}
+
+
+/* Entrance Test link in the navigation */
+.nav-link.nav-test {
+    color: var(--red) !important;
+    font-weight: 700;
+}
+
+
+/* Campus photo card (replaces the old video placeholder) */
+.campus-card-photo {
+    display: block;
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    object-position: center 30%;
+    border-radius: 10px;
+}
+
+@media (max-width: 575.98px) {
+    .campus-card-photo {
+        height: 250px;
+    }
+}
